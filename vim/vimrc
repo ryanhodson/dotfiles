@@ -114,6 +114,6 @@ command! SB :call ScratchBuffer()
 
 
 " Pathogen plugins
-"execute pathogen#infect()
-"call pathogen#helptags()
+execute pathogen#infect()
+call pathogen#helptags()
 
