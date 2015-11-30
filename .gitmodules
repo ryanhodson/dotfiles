@@ -13,3 +13,6 @@
 [submodule "vim/bundle/vim-session"]
 	path = vim/bundle/vim-session
 	url = git@github.com:xolox/vim-session.git
+[submodule "vim/bundle/ack"]
+	path = vim/bundle/ack
+	url = https://github.com/mileszs/ack.vim.git

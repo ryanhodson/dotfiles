@@ -109,9 +109,16 @@ let NERDTreeMapOpenInTab='y'
 let NERDTreeMapOpenInTabSilent='Y'
 let NERDTreeMapOpenVSplit='a'
 
+" Vim Sessions
+let g:session_autosave = 'no'
+
+" Command-T
 let g:CommandTWildIgnore="site/*,*.swp,.DS_Store"
 let g:CommandTHighlightColor="none"
 
+" Ack
+nmap <leader>a :Ack 
+nmap ^ :Ack <c-r>=expand("<cword>")<enter><enter>
 
 " Pathogen plugins
 execute pathogen#infect()
