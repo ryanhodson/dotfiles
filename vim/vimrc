@@ -109,8 +109,8 @@ let NERDTreeMapOpenInTab='y'
 let NERDTreeMapOpenInTabSilent='Y'
 let NERDTreeMapOpenVSplit='a'
 
-"let g:CommandTWildIgnore="site/*,*.swp,.DS_Store"
-"let g:CommandTHighlightColor="none"
+let g:CommandTWildIgnore="site/*,*.swp,.DS_Store"
+let g:CommandTHighlightColor="none"
 
 
 " Pathogen plugins

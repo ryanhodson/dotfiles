@@ -7,3 +7,9 @@
 [submodule "vim/bundle/command-t"]
 	path = vim/bundle/command-t
 	url = git@github.com:wincent/command-t.git
+[submodule "vim/bundle/vim-misc"]
+	path = vim/bundle/vim-misc
+	url = git@github.com:xolox/vim-misc.git
+[submodule "vim/bundle/vim-session"]
+	path = vim/bundle/vim-session
+	url = git@github.com:xolox/vim-session.git
