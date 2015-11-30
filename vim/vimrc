@@ -1,0 +1,119 @@
+
+" Basics
+colorscheme torte
+syntax on
+set autoindent
+set backspace=indent,eol,start
+set ruler
+set nojoinspaces
+set tabstop=4
+set shiftwidth=4
+set noexpandtab
+set textwidth=79
+set scrolloff=3
+set visualbell
+set t_vb=
+set noerrorbells
+let mapleader=" "
+set guifont=Menlo:h11
+
+
+" Dvorak Mappings
+no d h
+no h j
+no t k
+no n l
+no s :
+no j s
+no J S
+no e d
+no E e
+no l n
+no L N
+
+" Dvorak Window Mappings
+no <C-w>d <C-w>h
+no <C-w>h <C-w>j
+no <C-w>t <C-w>k
+no <C-w>n <C-w>l
+no <C-w>D <C-w>H
+no <C-w>H <C-w>J
+no <C-w>T <C-w>K
+no <C-w>N <C-w>L
+
+" Better Drovak Window Mappings
+no <C-d> <C-w>h
+no <C-h> <C-w>j
+no <C-t> <C-w>k
+no <C-n> <C-w>l
+
+
+" Convenience Mappings
+no - $
+no _ ^
+no S :w<return>
+map <C-j> 5<C-e>
+map <C-k> 5<C-y>
+map <S-h> 5h
+map <S-t> 5t
+
+
+" HTML Mappings
+imap \' &rsquo;
+imap \"< &ldquo;
+imap \"> &rdquo;
+imap \< &lt;
+imap \> &gt;
+imap \- &ndash;
+imap \-- &mdash;
+imap \<Space> &nbsp;
+imap \` <code></code><Esc>7<Left>a
+" (Jinja)
+imap \~ {% code "" %}<Return>{% endcode %}<Esc><Up>4<Left>a
+imap \p <p></p><Esc>4<Left>a
+imap \e <em></em><Esc>5<Left>a
+imap \s <strong></strong><Esc>9<Left>a
+imap \u <ul><return><return></ul><Esc><Up>a
+imap \o <ol><return><return></ol><Esc><Up>a
+imap \l <li></li><Esc>5<Left>a
+imap <C-Space> <Esc>/><Return>a
+imap \1 <h1></h1><Esc>5<Left>a
+imap \2 <h2></h2><Esc>5<Left>a
+imap \3 <h3></h3><Esc>5<Left>a
+imap \4 <h4></h4><Esc>5<Left>a
+imap \5 <h5></h5><Esc>5<Left>a
+imap \6 <h6></h6><Esc>5<Left>a
+imap \f <figure><Return><Tab><img src='' /><Return><figcaption></figcaption><Return><BS></figure><Esc>2<Up>5<Right>a
+imap \t <table><Return><thead><Return><tr><Return><Tab><th></th><Return><BS></tr><Return></thead><Return><tbody><Return><tr><Return><Tab><td></td><Return><BS></tr><Return></tbody><Return></table><Esc>
+imap \a <a href=''></a><Esc>5di
+
+
+" Syntax Highlighting
+au BufRead,BufNewFile *.opf set syntax=xml
+au BufRead,BufNewFile *.md set syntax=markdown
+
+
+" Scratch Buffer
+func! ScratchBuffer()
+	tabnew
+	setlocal buftype=nofile
+	setlocal bufhidden=delete
+	setlocal noswapfile
+endfunc
+command! SB :call ScratchBuffer()
+
+
+" Plugin Settings
+" (Dvorak overrides for default NERDTree mappings)
+"let NERDTreeMapOpenInTab='\t'
+"let NERDTreeMapOpenInTabSilent='\T'
+"let NERDTreeMapOpenVSplit='\s'
+
+"let g:CommandTWildIgnore="site/*,*.swp,.DS_Store"
+"let g:CommandTHighlightColor="none"
+
+
+" Pathogen plugins
+"execute pathogen#infect()
+"call pathogen#helptags()
+
