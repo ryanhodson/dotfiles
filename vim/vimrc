@@ -105,9 +105,9 @@ command! SB :call ScratchBuffer()
 
 " Plugin Settings
 " (Dvorak overrides for default NERDTree mappings)
-"let NERDTreeMapOpenInTab='\t'
-"let NERDTreeMapOpenInTabSilent='\T'
-"let NERDTreeMapOpenVSplit='\s'
+let NERDTreeMapOpenInTab='y'
+let NERDTreeMapOpenInTabSilent='Y'
+let NERDTreeMapOpenVSplit='a'
 
 "let g:CommandTWildIgnore="site/*,*.swp,.DS_Store"
 "let g:CommandTHighlightColor="none"
