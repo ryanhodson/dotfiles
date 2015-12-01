@@ -1,4 +1,44 @@
 
+" Setup Vundle
+set nocompatible              " Required
+filetype off                  " Required
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" --- Vundle Plugins Go Here ---
+
+Plugin 'VundleVim/Vundle.vim' " Required
+Plugin 'ervandew/supertab'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-session'
+Plugin 'rking/ag.vim'
+
+" --- End Vundle Plugins ---
+
+call vundle#end()            " Required
+filetype plugin indent on    " Required
+
+
+" NERDTree Plugin Settings
+let NERDTreeMapOpenInTab='y'
+let NERDTreeMapOpenInTabSilent='Y'
+let NERDTreeMapOpenVSplit='a'
+
+" CtrlP Plugin Settings
+let g:ctrlp_custom_ignore = 'site' "This is more complicated
+
+" Session Plugin Settings
+let g:session_autosave = 'no'
+
+" Ag Plugin Settings
+nmap <c-a> :Ag! 
+nmap ^ :Ag! <Enter>
+nmap <Leader>a :Ag! 
+nmap <Leader>p <c-p>
+
+
 " Basics
 colorscheme torte
 syntax on
@@ -101,26 +141,4 @@ func! ScratchBuffer()
 	setlocal noswapfile
 endfunc
 command! SB :call ScratchBuffer()
-
-
-" Plugin Settings
-" (Dvorak overrides for default NERDTree mappings)
-let NERDTreeMapOpenInTab='y'
-let NERDTreeMapOpenInTabSilent='Y'
-let NERDTreeMapOpenVSplit='a'
-
-" Vim Sessions
-let g:session_autosave = 'no'
-
-" Command-T
-let g:CommandTWildIgnore="site/*,*.swp,.DS_Store"
-let g:CommandTHighlightColor="none"
-
-" Ack
-nmap <leader>a :Ack 
-nmap ^ :Ack <c-r>=expand("<cword>")<enter><enter>
-
-" Pathogen plugins
-execute pathogen#infect()
-call pathogen#helptags()
 
