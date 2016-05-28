@@ -8,12 +8,12 @@ call vundle#begin()
 " --- Vundle Plugins Go Here ---
 
 Plugin 'VundleVim/Vundle.vim' " Required
-Plugin 'ervandew/supertab'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-session'
 Plugin 'rking/ag.vim'
+Plugin 'editorconfig/editorconfig-vim'
 
 " --- End Vundle Plugins ---
 
@@ -25,9 +25,10 @@ filetype plugin indent on    " Required
 let NERDTreeMapOpenInTab='y'
 let NERDTreeMapOpenInTabSilent='Y'
 let NERDTreeMapOpenVSplit='a'
+let NERDTreeIgnore=['node_modules','dist']
 
 " CtrlP Plugin Settings
-let g:ctrlp_custom_ignore = 'site' "This is more complicated
+let g:ctrlp_custom_ignore = 'dist' "This is more complicated
 
 " Session Plugin Settings
 let g:session_autosave = 'no'
@@ -40,7 +41,7 @@ nmap <Leader>p <c-p>
 
 
 " Basics
-colorscheme torte
+colorscheme desert
 syntax on
 set autoindent
 set backspace=indent,eol,start
@@ -123,14 +124,16 @@ imap \3 <h3></h3><Esc>5<Left>a
 imap \4 <h4></h4><Esc>5<Left>a
 imap \5 <h5></h5><Esc>5<Left>a
 imap \6 <h6></h6><Esc>5<Left>a
-imap \f <figure><Return><Tab><img src='' /><Return><figcaption></figcaption><Return><BS></figure><Esc>2<Up>5<Right>a
+imap \f <figure><Return><img src='' /><Return><figcaption></figcaption><Return><BS></figure><Esc>2<Up>5<Right>a
 imap \t <table><Return><thead><Return><tr><Return><Tab><th></th><Return><BS></tr><Return></thead><Return><tbody><Return><tr><Return><Tab><td></td><Return><BS></tr><Return></tbody><Return></table><Esc>
 imap \a <a href=''></a><Esc>5di
+imap \c <div class='section'><Return><BS><BS><div class='content'><Return></div><Return></div><Esc>2<Up>o<BS><Enter><Enter><Up>\2<Esc>I<BS><BS><Esc>3<Right>a
 
 
 " Syntax Highlighting
 au BufRead,BufNewFile *.opf set syntax=xml
 au BufRead,BufNewFile *.md set syntax=markdown
+au BufRead,BufNewFile *.html set syntax=jinja
 
 
 " Scratch Buffer
